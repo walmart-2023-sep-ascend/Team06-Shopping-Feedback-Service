@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capstone.ShoppingFeedback.Service.FeedbackResponseServiceImpl;
-import com.capstone.ShoppingFeedback.model.FeedbackResponse;
+import com.capstone.ShoppingFeedback.model.FeedbackResponse;	
 
 @RestController
 public class FeedbackResponseController {
@@ -24,7 +24,7 @@ public class FeedbackResponseController {
 	@Autowired
 	FeedbackResponseServiceImpl resserv;
 	ResponseEntity<?> resentity;
-
+	
 	@GetMapping("/allresponses")
 	public ResponseEntity<?> getAllResponses() {
 		List<FeedbackResponse> responses = resserv.getAllResponses();
@@ -43,9 +43,13 @@ public class FeedbackResponseController {
 
 	@PostMapping("/addresponse")
 	public ResponseEntity<?> addOrd(@RequestBody FeedbackResponse response) {
+		
 		resserv.addResponse(response);
 		logger.info("Response added successfully!!");
-		resentity = new ResponseEntity<>(response, HttpStatus.CREATED);
+		resentity = new ResponseEntity<>("200", HttpStatus.CREATED);
+		//if(resentity.getStatusCode()==HttpStatus.CREATED) {
+		//	resentity = 
+		//}
 		return resentity;
 	}
 }

@@ -15,6 +15,14 @@ public class FeedbackResponse {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public FeedbackResponse(int cartId, int userId, List<Response> response, float averageRating, String comments) {
+		super();
+		this.cartId = cartId;
+		this.userId = userId;
+		this.response = response;
+		this.averageRating = averageRating;
+		this.comments = comments;
+	}
 	public int getCartId() {
 		return cartId;
 	}

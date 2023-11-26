@@ -9,6 +9,11 @@ public class Response {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Response(int response) {
+		super();
+		this.response = response;
+	}
+
 	public int getResponse() {
 		return response;
 	}

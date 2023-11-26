@@ -17,7 +17,7 @@ pipeline{
         stage('Build Docker image'){
             steps{
                 script{
-                    bat 'docker build -t shopping-feedback-docker.jar .'
+                    bat 'docker build -t shopping-feedback-service.jar .'
                 }
             }
         }
