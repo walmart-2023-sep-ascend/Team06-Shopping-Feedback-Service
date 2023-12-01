@@ -42,14 +42,10 @@ public class FeedbackResponseController {
 	}
 
 	@PostMapping("/addresponse")
-	public ResponseEntity<?> addOrd(@RequestBody FeedbackResponse response) {
-		
+	public ResponseEntity<?> addOrd(@RequestBody FeedbackResponse response) {		
 		resserv.addResponse(response);
 		logger.info("Response added successfully!!");
-		resentity = new ResponseEntity<>("200", HttpStatus.CREATED);
-		//if(resentity.getStatusCode()==HttpStatus.CREATED) {
-		//	resentity = 
-		//}
+		resentity = new ResponseEntity<>("200: Response submitted successfully", HttpStatus.CREATED);
 		return resentity;
 	}
 }
